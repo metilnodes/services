@@ -1,5 +1,11 @@
 # Story snapshot (archive & prunned)
 
+### One-liner for apply snapshot
+```
+#Coming soon
+
+```
+
 ## Archive snapshot
 
 ### Install Tools
