@@ -73,12 +73,12 @@ sudo rm -rf $HOME/.story/story/data
 ### Download story prunned snapshot
 
 ```
-wget -O story_snapshot.lz4 http://storysnapshot.metilnodes.tech/downloads/story_snapshot.lz4
+wget -O story_snapshot.lz4 https://storysnapshot.metilnodes.tech/downloads/story_snapshot.lz4
 
 ```
 ### Download story-geth snapshot
 ```
-wget -O geth_snapshot.lz4 http://storysnapshot.metilnodes.tech/downloads/geth_snapshot.lz4
+wget -O geth_snapshot.lz4 https://storysnapshot.metilnodes.tech/downloads/geth_snapshot.lz4
 
 ```
 
