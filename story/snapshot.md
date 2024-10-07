@@ -1,10 +1,4 @@
-# Story snapshot (archive & prunned)
-
-### One-liner for apply snapshot
-```
-#Coming soon
-
-```
+# Story snapshots (archive & prunned) + One-liner
 
 ## Archive snapshot
 
@@ -108,4 +102,12 @@ sudo systemctl start story-geth
 ```
 sudo journalctl -u story -f -o cat
 sudo journalctl -u story-geth -f -o cat
+```
+
+
+
+### One-liner for apply snapshot
+```
+#Coming soon
+
 ```
