@@ -18,7 +18,7 @@ sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_vali
 sudo rm -rf $HOME/.story/geth/iliad/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 ```
-### Download story snapshot
+### Download story archive snapshot
 
 ```
 ## COMING SOON...
@@ -70,7 +70,7 @@ sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_vali
 sudo rm -rf $HOME/.story/geth/iliad/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 ```
-### Download story snapshot
+### Download story prunned snapshot
 
 ```
 wget -O story_snapshot.lz4 http://storysnapshot.metilnodes.tech/downloads/story_snapshot.lz4
