@@ -46,6 +46,19 @@ lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 
 ```
 
+### Restore priv_validator_state.json
+```
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+
+```
+
+### Delete downloaded snapshots
+```
+sudo rm -v story_snapshot.lz4
+sudo rm -v geth_snapshot.lz4
+```
+
+
 ### Restart node
 ```
 sudo systemctl start story
@@ -99,6 +112,19 @@ lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 
 ```
 
+
+### Restore priv_validator_state.json
+```
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+
+```
+
+### Delete downloaded snapshots
+```
+sudo rm -v story_snapshot.lz4
+sudo rm -v geth_snapshot.lz4
+```
+
 ### Restart node
 ```
 sudo systemctl start story
@@ -109,4 +135,3 @@ sudo systemctl start story-geth
 sudo journalctl -u story -f -o cat
 sudo journalctl -u story-geth -f -o cat
 ```
-
