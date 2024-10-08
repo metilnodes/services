@@ -1,3 +1,6 @@
+![alt text](https://github.com/metilnodes/metilnodes/blob/main/logo/storysnapshot.png)
+
+
 # Story snapshots (archive & prunned) + One-liner
 
 ### One-liner for apply snapshot
