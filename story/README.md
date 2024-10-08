@@ -1,3 +1,6 @@
+![alt text](https://github.com/metilnodes/metilnodes/blob/main/logo/storyservices.png)
+
+
 # Story
 
 ### One-liner for installation
