@@ -5,7 +5,7 @@
 wget -q -O story.sh hhttps://raw.githubusercontent.com/metilnodes/services/refs/heads/main/story/story.sh && sudo chmod +x story.sh && ./story.sh
 ```
 
-## Archive snapshot
+## Archive snapshot - manual install
 
 ### Install Tools
 ```
@@ -70,7 +70,7 @@ sudo journalctl -u story-geth -f -o cat
 ```
 
 
-## Pruned snapshot
+## Pruned snapshot - manual install
 
 ### Install Tools
 ```
