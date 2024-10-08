@@ -1,5 +1,11 @@
 # Story snapshots (archive & prunned) + One-liner
 
+### One-liner for apply snapshot
+```
+#Coming soon
+
+```
+
 ## Archive snapshot
 
 ### Install Tools
@@ -21,12 +27,12 @@ sudo rm -rf $HOME/.story/story/data
 ### Download story archive snapshot
 
 ```
-## COMING SOON...
+wget -O story_snapshot.lz4 https://storysnapshotarchive.metilnodes.tech/downloads/story_snapshot.lz4
 
 ```
 ### Download story-geth snapshot
 ```
-## COMING SOON...
+wget -O geth_snapshot.lz4 https://storysnapshotarchive.metilnodes.tech/downloads/geth_snapshot.lz4
 ```
 
 ### Decompress story snapshot
@@ -104,10 +110,3 @@ sudo journalctl -u story -f -o cat
 sudo journalctl -u story-geth -f -o cat
 ```
 
-
-
-### One-liner for apply snapshot
-```
-#Coming soon
-
-```
