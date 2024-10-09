@@ -9,7 +9,7 @@ wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/h
 ```
 
 ## Archive snapshot - manual install
-Check height: https://storysnapshotarchive.metilnodes.tech/downloads/height.txt
+Height of the snapshot: [Check Height](https://storysnapshotarchive.metilnodes.tech/downloads/height.txt)
 
 ### Install Tools
 ```
@@ -75,7 +75,7 @@ sudo journalctl -u story-geth -f -o cat
 
 
 ## Pruned snapshot - manual install
-Check height: https://storysnapshot.metilnodes.tech/downloads/height.txt
+Height of the snapshot: [Check Height](https://storysnapshot.metilnodes.tech/downloads/height.txt)
 
 ### Install Tools
 ```
