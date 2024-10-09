@@ -9,3 +9,5 @@ Run the script for quick installation, choose "Install node", add a name for you
 ```
 wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/heads/main/story/story.sh && sudo chmod +x story.sh && ./story.sh
 ```
+
+## Manual Installation
