@@ -286,17 +286,17 @@ sleep 1
 rm -rf $HOME/.story/story/data
 rm -rf $HOME/.story/geth/iliad/geth/chaindata
 sleep 1
-#### wget -O story_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/story_snapshot.lz4
+wget -O story_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/story_snapshot.lz4
 
 sleep 2
 
-#### wget -O geth_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/geth_snapshot.lz4
+wget -O geth_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/geth_snapshot.lz4
 
-#### lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
+lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 
 sleep 2
 
-#### lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 sleep 1
 echo -e "\033[0;33mDecompress completed, starting services\033[0m"
 sleep 1
