@@ -5,10 +5,11 @@
 
 ### One-liner for apply snapshot
 ```
-wget -q -O story.sh hhttps://raw.githubusercontent.com/metilnodes/services/refs/heads/main/story/story.sh && sudo chmod +x story.sh && ./story.sh
+wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/heads/main/story/story.sh && sudo chmod +x story.sh && ./story.sh
 ```
 
 ## Archive snapshot - manual install
+Check height: https://storysnapshotarchive.metilnodes.tech/downloads/height.txt
 
 ### Install Tools
 ```
@@ -74,6 +75,7 @@ sudo journalctl -u story-geth -f -o cat
 
 
 ## Pruned snapshot - manual install
+Check height: https://storysnapshot.metilnodes.tech/downloads/height.txt
 
 ### Install Tools
 ```
