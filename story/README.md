@@ -3,7 +3,7 @@
 
 # Story
 
-### One-liner for installation
+##  One-liner for automate Installation
 
 Run the script for quick installation, choose "Install node", add a name for your node and wait for the installation to finish
 ```
