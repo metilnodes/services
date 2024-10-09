@@ -9,6 +9,13 @@ Run the script for quick installation, choose "Install node", add a name for you
 ```
 wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/heads/main/story/story.sh && sudo chmod +x story.sh && ./story.sh
 ```
+### What One-liner can:
+1. Node installation
+2. Download and apply archive snapshot
+3. Download and apply pruned snapshot
+4. Node upgrading + latest version checker for story and story-geth
+5. Showing logs
+6. Sync status checker
 
 ## Manual Installation
 
