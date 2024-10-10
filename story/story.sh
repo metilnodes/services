@@ -281,7 +281,7 @@ sleep 1
 sudo systemctl stop story
 sudo systemctl stop story-geth
 sleep 1
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup
 sleep 1
 rm -rf $HOME/.story/story/data
 rm -rf $HOME/.story/geth/iliad/geth/chaindata
@@ -300,7 +300,7 @@ lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 sleep 1
 echo -e "\033[0;33mDecompress completed, starting services\033[0m"
 sleep 1
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+mv $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
 sleep 1
 sudo rm -v story_snapshot.lz4
 sudo rm -v geth_snapshot.lz4
@@ -339,7 +339,7 @@ lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 sleep 1
 echo -e "\033[0;33mDecompress completed, starting services\033[0m"
 sleep 1
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+mv $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
 sleep 1
 sudo rm -v story_snapshot.lz4
 sudo rm -v geth_snapshot.lz4
