@@ -43,6 +43,7 @@ cd $HOME/story
 git checkout $latest_version
 go build -o story ./client
 sudo mv $HOME/story/story $(which story)
+source $HOME/.bash_profile
 sudo systemctl restart story && sudo journalctl -u story -f
 
         echo "Updated!"
@@ -76,11 +77,12 @@ if [ "$current_version" != "$latest_version" ]; then
     if [ "$update_choice" == "y" ]; then
         echo "Installing new version..."
         # update
-        sudo systemctl stop cosmosd
+        sudo systemctl stop story-geth
         cd /root/go/bin/
         wget "https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.3-b224fdf.tar.gz"
         tar -xzf "geth-linux-amd64-0.9.3-b224fdf.tar.gz"
-        sudo systemctl start cosmosd
+        source $HOME/.bash_profile
+        sudo systemctl start story-geth
         echo "Updated!"
     else
         echo "Cancelled."
@@ -298,6 +300,8 @@ sleep 2
 
 lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
 sleep 1
+source $HOME/.bash_profile
+sleep 1
 echo -e "\033[0;33mDecompress completed, starting services\033[0m"
 sleep 1
 mv $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
@@ -336,6 +340,8 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 sleep 2
 
 lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
+sleep 1
+source $HOME/.bash_profile
 sleep 1
 echo -e "\033[0;33mDecompress completed, starting services\033[0m"
 sleep 1
