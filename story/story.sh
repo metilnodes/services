@@ -19,7 +19,7 @@ function sub_option1() {
 Story_BIN="/root/go/bin/story"
 
 # Current version
-current_version=$(/root/go/bin/story version | grep -oP '(?<=Version: )\d+\.\d+\.\d+')
+current_version=$(/root/go/bin/story version | grep -oP '(?<=Version: v)\d+\.\d+\.\d+')
 
 # Latest version
 latest_version=$(curl -s "https://api.github.com/repos/piplabs/story/releases/latest" | grep -oP '(?<="tag_name": "v)\d+\.\d+\.\d+')
