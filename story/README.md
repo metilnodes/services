@@ -52,10 +52,10 @@ story-geth version
 
 ### Download Story binary
 ```
-wget -O story-linux-amd64-0.10.1-57567e5 https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.10.1-57567e5.tar.gz
-tar xvf story-linux-amd64-0.10.1-57567e5
-sudo chmod +x story-linux-amd64-0.10.1-57567e5/story
-sudo mv story-linux-amd64-0.10.1-57567e5/story $HOME/go/bin
+wget -O https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.11.0-aac4bfe.tar.gz
+tar xvf story-linux-amd64-0.11.0-aac4bfe.tar.gz
+sudo chmod +x story-linux-amd64-0.11.0-aac4bfe/story
+sudo mv story-linux-amd64-0.11.0-aac4bfe/story $HOME/go/bin
 source $HOME/.bash_profile
 story version
 ```
