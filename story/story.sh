@@ -25,7 +25,7 @@ current_version=$(/root/go/bin/story version | grep -oP '(?<=Version: v)\d+\.\d+
 latest_version=$(curl -s "https://api.github.com/repos/piplabs/story/releases/latest" | grep -oP '(?<="tag_name": "v)\d+\.\d+\.\d+')
 
 # Compare versions
-if [ "$current_version" != "$latest_version" ]; then
+if [ "$(echo -e "$latest_version\n$current_version" | sort -V | head -n1)" != "$current_version" ]; then
     echo "Available new version for Story!"
     echo "Current version: $current_version"
     echo "Latest version available: $latest_version"
