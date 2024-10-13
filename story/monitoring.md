@@ -149,5 +149,11 @@ In connection type: http://localhost:9090, setup name and click Save % test in t
 ![image](https://github.com/user-attachments/assets/e5e6384a-ca9a-4d44-9d11-fc696c64d4d5)
 
 -----
+## Import Dashboad for monitoring
 
-In process In process In process 
+Go to Dashboards - New - Import
+![image](https://github.com/user-attachments/assets/083ba753-a01e-4db6-8b62-8f885ee9832f)
+
+You can Upload dshaboard Json file, Import via text or choose ID of prepared [Grafana dashboards](https://grafana.com/grafana/dashboards/)
+
+![image](https://github.com/user-attachments/assets/e6e26678-0bc7-4478-a04f-f77e469c10d4)
