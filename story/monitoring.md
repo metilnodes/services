@@ -134,7 +134,7 @@ Open your browser and visit http://YOUR_IP:3000
 ![image](https://github.com/user-attachments/assets/238d0499-f3ab-4025-8b17-9bddeaae073e)
 username/password : admin/admin (change it after first login)
 
-* On Home page click Connections - Data Sources - Add data source 
+On Home page click Connections - Data Sources - Add data source 
 ![image](https://github.com/user-attachments/assets/54c5eea5-de40-404d-ba32-0d3712fe67a2)
 
 Click on Prometheus
