@@ -79,7 +79,7 @@ sudo journalctl -u node-exporterd.service -fn 50 -o cat
 nano $HOME/prometheus/prometheus.yml
 
 ```
-add and save 
+add text below and save 
 ```
     static_configs:
       - targets: ["localhost:9090","localhost:9100"]
@@ -98,7 +98,7 @@ sudo systemctl restart  prometheusd.service
 sudo systemctl status prometheusd.service
 ```
 
-## Install Grafana
+### Install Grafana
 
 ```
 sudo apt-get install -y apt-transport-https
@@ -119,7 +119,7 @@ sudo systemctl status grafana-server
 
 Grafana service file will be created at dir : /lib/systemd/system/grafana-server.service
 
-After succes install we can setup our dashboard.
+### After succes install we can setup our dashboard.
 
 ... In process
 ... In process
