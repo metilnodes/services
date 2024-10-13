@@ -34,7 +34,7 @@ EOF
 ```
 systemctl daemon-reload
 sudo systemctl enable prometheusd.service
-sudo systemctl restart  prometheusd.service
+sudo systemctl restart prometheusd.service
 sudo systemctl status prometheusd.service
 sudo journalctl -u prometheusd.service -fn 50 -o cat
 ```
