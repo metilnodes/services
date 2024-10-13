@@ -84,7 +84,7 @@ add text below and save
     static_configs:
       - targets: ["localhost:9090","localhost:9100"]
 
-  - job_name: 'story'
+  - job_name: 'prometheus'
     scheme: http
     metrics_path: /metrics
     static_configs:
@@ -121,7 +121,29 @@ Grafana service file will be created at dir : /lib/systemd/system/grafana-server
 
 ### After succes install we can setup our dashboard.
 
-... In process
-... In process
-... In process
-... In process
+Open config and change prometheus value to TRUE and restart your validator node!
+```
+ nano $HOME/.story/story/config/config.toml
+
+```
+![image](https://github.com/user-attachments/assets/1f2ba214-353f-47a5-919c-fc140d8f77ff)
+
+### Connect to our Grafana web page
+
+Open your browser and visit http://YOUR_IP:3000
+![image](https://github.com/user-attachments/assets/238d0499-f3ab-4025-8b17-9bddeaae073e)
+username/password : admin/admin (change it after first login)
+
+* On Home page click Connections - Data Sources - Add data source 
+![image](https://github.com/user-attachments/assets/54c5eea5-de40-404d-ba32-0d3712fe67a2)
+
+Click on Prometheus
+![image](https://github.com/user-attachments/assets/25c23260-cbb5-4cda-9bd4-0348700aeda8)
+
+In connection type: http://localhost:9090, setup name and click Save % test in the end of the page
+![image](https://github.com/user-attachments/assets/be6399a9-69e6-48e3-820e-bf91fb88b324)
+![image](https://github.com/user-attachments/assets/e5e6384a-ca9a-4d44-9d11-fc696c64d4d5)
+
+-----
+
+In process In process In process 
