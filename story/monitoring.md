@@ -1,6 +1,6 @@
 # Story Grafana monitoring setup
 
-## 1. Install Prometheus
+## Install Prometheus
 ```
 cd $HOME
 curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | \
