@@ -144,7 +144,7 @@ Click on Prometheus
 
 ![image](https://github.com/user-attachments/assets/25c23260-cbb5-4cda-9bd4-0348700aeda8)
 
-In connection type: http://localhost:9090, setup name and click Save % test in the end of the page
+In connection type: http://localhost:9090, setup name and click Save & test in the end of the page
 
 ![image](https://github.com/user-attachments/assets/be6399a9-69e6-48e3-820e-bf91fb88b324)
 ![image](https://github.com/user-attachments/assets/e5e6384a-ca9a-4d44-9d11-fc696c64d4d5)
