@@ -1,5 +1,5 @@
 # Story Grafana monitoring setup
-Download [Story Validator Monitoring Dashboard](https://github.com/metilnodes/services/blob/main/story/storygrafana.json)
+Download [Story Validator Monitoring Dashboard Templates](https://github.com/metilnodes/services/blob/main/story/storygrafana.json)
 
 ## Install Prometheus
 ```
