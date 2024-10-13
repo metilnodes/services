@@ -1,4 +1,5 @@
 # Story Grafana monitoring setup
+Download [Story Validator Monitoring Dashboard](https://github.com/metilnodes/services/blob/main/story/storygrafana.json)
 
 ## Install Prometheus
 ```
@@ -158,3 +159,5 @@ Go to Dashboards - New - Import
 You can Upload dshaboard Json file, Import via text or choose ID of prepared [Grafana dashboards](https://grafana.com/grafana/dashboards/)
 
 ![image](https://github.com/user-attachments/assets/e6e26678-0bc7-4478-a04f-f77e469c10d4)
+
+### Validator dashboard ready! 
