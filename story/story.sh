@@ -79,8 +79,8 @@ if [ "$current_version" != "$latest_version" ]; then
         # update
         sudo systemctl stop story-geth
         cd /root/go/bin/
-        wget "https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.3-b224fdf.tar.gz"
-        tar -xzf "geth-linux-amd64-0.9.3-b224fdf.tar.gz"
+        wget -O story-geth https://github.com/piplabs/story-geth/releases/download/v0.9.4/geth-linux-amd64
+        chmod +x story-geth
         source $HOME/.bash_profile
         sudo systemctl start story-geth
         echo "Updated!"
