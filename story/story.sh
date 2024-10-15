@@ -16,10 +16,10 @@ reset="\e[0m"   # Сброс цвета
 function sub_option1() {
     echo "Install story update"
 # Story binary
-Story_BIN="/root/go/bin/story"
+Story_BIN="$HOME/go/bin/story"
 
 # Current version
-current_version=$(/root/go/bin/story version | grep -oP '(?<=Version: )\d+\.\d+\.\d+')
+current_version=$($HOME/go/bin/story version | grep -oP '(?<=Version: )\d+\.\d+\.\d+')
 
 # Latest version
 latest_version=$(curl -s "https://api.github.com/repos/piplabs/story/releases/latest" | grep -oP '(?<="tag_name": "v)\d+\.\d+\.\d+')
@@ -59,10 +59,10 @@ fi
 function sub_option2() {
     echo "Install story-geth update"
 
-STORY_GETH_BIN="/root/go/bin/story-geth"
+STORY_GETH_BIN="$HOME/go/bin/story-geth"
 
 # Current version
-current_version=$(/root/go/bin/story-geth version | grep -oP '(?<=Version: )\d+\.\d+\.\d+')
+current_version=$($HOME/go/bin/story-geth version | grep -oP '(?<=Version: )\d+\.\d+\.\d+')
 
 latest_version=$(curl -s "https://api.github.com/repos/piplabs/story-geth/releases/latest" | grep -oP '(?<="tag_name": "v)\d+\.\d+\.\d+')
 
@@ -78,7 +78,7 @@ if [ "$current_version" != "$latest_version" ]; then
         echo "Installing new version..."
         # update
         sudo systemctl stop story-geth
-        cd /root/go/bin/
+        cd $HOME/go/bin/
         wget -O story-geth https://github.com/piplabs/story-geth/releases/download/v0.9.4/geth-linux-amd64
         chmod +x story-geth
         source $HOME/.bash_profile
