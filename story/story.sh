@@ -200,6 +200,9 @@ wget -O geth-linux-amd64-0.9.3-b224fdf.tar.gz https://story-geth-binaries.s3.us-
 tar xvf geth-linux-amd64-0.9.3-b224fdf.tar.gz
 sudo chmod +x geth-linux-amd64-0.9.3-b224fdf/geth
 sudo mv geth-linux-amd64-0.9.3-b224fdf/geth $HOME/go/bin/story-geth
+cd $HOME/go/bin/
+wget -O story-geth https://github.com/piplabs/story-geth/releases/download/v0.9.4/geth-linux-amd64
+chmod +x story-geth
 source $HOME/.bash_profile
 story-geth version
 
