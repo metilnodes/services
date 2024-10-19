@@ -394,9 +394,6 @@ curl -s localhost:26657/status | jq .result.sync_info
 elif [ "$option" -eq 7 ]; then
     echo "Installation canceled"
 
-else
-    echo "Incorrect, try again."
-
 elif [ "$option" -eq 8 ]; then
     echo "Installation canceled"
 
