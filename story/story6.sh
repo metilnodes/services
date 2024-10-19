@@ -402,7 +402,7 @@ systemctl restart story
     echo "Peers and seeds added"
 elif [ "$option" -eq 8 ]; then
     echo "Go to explorer via link below:"
-echo "https://testnet.storyscan.app/"
+echo -e "\033[0;33mhttps://testnet.storyscan.app/\033[0m"
 
 elif [ "$option" -eq 9 ]; then
     echo "Installation canceled"
