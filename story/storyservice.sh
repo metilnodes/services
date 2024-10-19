@@ -117,7 +117,8 @@ echo -e "\033[0;37m4. Upgrade\033[0m"
 echo -e "\033[0;37m5. Show logs\033[0m"
 echo -e "\033[0;37m6. Check sync status\033[0m"
 echo -e "\033[0;37m7. Add peers and seeds\033[0m"
-echo -e "\033[0;37m8. Exit\033[0m"
+echo -e "\033[0;37m8. Explorer\033[0m"
+echo -e "\033[0;37m9. Exit\033[0m"
 
 read -p "Choose option: " option
 
@@ -399,8 +400,11 @@ SEEDS=8c1b516805e0c4631306032a0108e51339ab7cfd@78.46.60.145:26656,b6fb541c80d968
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.story/story/config/config.toml
 systemctl restart story
     echo "Peers and seeds added"
-
 elif [ "$option" -eq 8 ]; then
+    echo "Go to explorer via link below:"
+echo -e "\033[0;33mhttps://testnet.storyscan.app/\033[0m"
+
+elif [ "$option" -eq 9 ]; then
     echo "Installation canceled"
 
 else
