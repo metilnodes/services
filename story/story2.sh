@@ -391,6 +391,7 @@ elif [ "$option" -eq 6 ]; then
 
 echo -e "\033[0;33mIf the result is 'false', the node is synchronized\033[0m"
 curl -s localhost:26657/status | jq .result.sync_info
+
 elif [ "$option" -eq 7 ]; then
     echo "Installation canceled"
 
@@ -399,6 +400,4 @@ elif [ "$option" -eq 8 ]; then
 
 else
     echo "Incorrect, try again."
-
-
 fi
