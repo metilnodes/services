@@ -10,7 +10,7 @@ wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/h
 
 ### Add peers
 ```
-PEERS=$(curl -sS curl -sS http://78.46.60.145:26657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+PEERS=$(curl -sS http://78.46.60.145:26657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
 
