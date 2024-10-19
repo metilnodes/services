@@ -139,3 +139,21 @@ sudo systemctl start story-geth
 sudo journalctl -u story -f -o cat
 sudo journalctl -u story-geth -f -o cat
 ```
+
+### Add peers
+```
+PEERS=$(curl -sS https://story-testnet-rpc.metilnodes.tech/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
+
+systemctl restart story
+```
+
+### Add seeds
+```
+SEEDS=8c1b516805e0c4631306032a0108e51339ab7cfd@78.46.60.145:26656,b6fb541c80d968931602710342dedfe1f5c577e3@story-seed.mandragora.io:23656,51ff395354c13fab493a03268249a74860b5f9cc@story-testnet-seed.itrocket.net:26656,5d7507dbb0e04150f800297eaba39c5161c034fe@135.125.188.77:26656
+
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.story/story/config/config.toml
+
+sudo systemctl restart story
+```
