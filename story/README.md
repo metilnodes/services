@@ -51,6 +51,7 @@ story-geth version
 
 ### Download Story binary
 ```
+cd $HOME
 wget https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
 sudo chmod +x $HOME/story-linux-amd64
 sudo mv $HOME/story-linux-amd64 $HOME/go/bin/story
