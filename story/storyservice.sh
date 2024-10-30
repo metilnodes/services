@@ -391,9 +391,9 @@ echo -e "\033[0;33mIf the result is 'false', the node is synchronized\033[0m"
 curl -s localhost:26657/status | jq .result.sync_info
 
 elif [ "$option" -eq 7 ]; then
-PEERS=$(curl -sS http://78.46.60.145:26657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+PEERS=$(curl -sS http://95.216.245.173:26657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.story/story/config/config.toml
-SEEDS=8c1b516805e0c4631306032a0108e51339ab7cfd@78.46.60.145:26656,b6fb541c80d968931602710342dedfe1f5c577e3@story-seed.mandragora.io:23656,51ff395354c13fab493a03268249a74860b5f9cc@story-testnet-seed.itrocket.net:26656,5d7507dbb0e04150f800297eaba39c5161c034fe@135.125.188.77:26656
+SEEDS=eeba908e8ff2889e8f94026874604badca5c9d83@2a01:95.216.245.173:26656,2df2b0b66f267939fea7fe098cfee696d6243cec@story-seed.mandragora.io:23656,434af9dae402ab9f1c8a8fc15eae2d68b5be3387@story-testnet-seed.itrocket.net:29656, 3f472746f46493309650e5a033076689996c8881@story-testnet.rpc.kjnodes.com:26659
 sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.story/story/config/config.toml
 systemctl restart story
     echo "Peers and seeds added"
