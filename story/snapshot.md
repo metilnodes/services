@@ -44,7 +44,7 @@ sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_vali
 
 ### Remove old data
 ```
-sudo rm -rf $HOME/.story/geth/iliad/geth/chaindata
+sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 ```
 ### Download story archive snapshot
@@ -65,7 +65,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 ```
 ### Decompress story-geth snapshot
 ```
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
 
 ```
 
@@ -110,7 +110,7 @@ sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_vali
 
 ### Remove old data
 ```
-sudo rm -rf $HOME/.story/geth/iliad/geth/chaindata
+sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 ```
 ### Download story prunned snapshot
@@ -132,7 +132,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 ```
 ### Decompress story-geth snapshot
 ```
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/iliad/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
 
 ```
 
