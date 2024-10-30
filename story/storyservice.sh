@@ -68,7 +68,7 @@ latest_version=$(curl -s "https://api.github.com/repos/piplabs/story-geth/releas
 
 # Compare versions
 if [ "$current_version" != "$latest_version" ]; then
-    echo "Available new version for Story!"
+    echo "Available new version for Story-geth!"
     echo "Current version: $current_version"
     echo "Latest version available: $latest_version"
     
@@ -79,8 +79,9 @@ if [ "$current_version" != "$latest_version" ]; then
         # update
         sudo systemctl stop story-geth
         cd $HOME/go/bin/
-        wget -O story-geth https://github.com/piplabs/story-geth/releases/download/v0.9.4/geth-linux-amd64
-        chmod +x story-geth
+        wget https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
+        sudo chmod +x $HOME/geth-linux-amd64
+        sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
         source $HOME/.bash_profile
         sudo systemctl start story-geth
         echo "Updated!"
