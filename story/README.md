@@ -42,27 +42,25 @@ go version
 ### Download Story-Geth binary
 ```
 cd $HOME
-wget -O geth-linux-amd64-0.9.3-b224fdf.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.3-b224fdf.tar.gz 
-tar xvf geth-linux-amd64-0.9.3-b224fdf.tar.gz
-sudo chmod +x geth-linux-amd64-0.9.3-b224fdf/geth
-sudo mv geth-linux-amd64-0.9.3-b224fdf/geth $HOME/go/bin/story-geth
+wget -O https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
+sudo chmod +x $HOME/geth-linux-amd64
+sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
 source $HOME/.bash_profile
 story-geth version
 ```
 
 ### Download Story binary
 ```
-wget -O https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.11.0-aac4bfe.tar.gz
-tar xvf story-linux-amd64-0.11.0-aac4bfe.tar.gz
-sudo chmod +x story-linux-amd64-0.11.0-aac4bfe/story
-sudo mv story-linux-amd64-0.11.0-aac4bfe/story $HOME/go/bin
+wget -O https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
+sudo chmod +x $HOME/geth-linux-amd64
+sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story
 source $HOME/.bash_profile
 story version
 ```
 
 ### Init Iliad node
 ```
-story init --network iliad --moniker "Your_moniker_name"
+story init --network odyssey --moniker "Your_moniker_name"
 
 ```
 
@@ -75,7 +73,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/root/go/bin/story-geth --iliad --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
+ExecStart=/root/go/bin/story-geth --odyssey --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
