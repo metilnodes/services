@@ -59,7 +59,7 @@ source $HOME/.bash_profile
 story version
 ```
 
-### Init Iliad node
+### Init Odyssey node
 ```
 story init --network odyssey --moniker "Your_moniker_name"
 
