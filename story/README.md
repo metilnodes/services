@@ -42,7 +42,7 @@ go version
 ### Download Story-Geth binary
 ```
 cd $HOME
-wget -O https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
+wget https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
 sudo chmod +x $HOME/geth-linux-amd64
 sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
 source $HOME/.bash_profile
@@ -51,7 +51,7 @@ story-geth version
 
 ### Download Story binary
 ```
-wget -O https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
+wget https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
 sudo chmod +x $HOME/geth-linux-amd64
 sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story
 source $HOME/.bash_profile
