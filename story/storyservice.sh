@@ -101,7 +101,7 @@ fi
 
 # Typing
 for (( i=0; i<${#text}; i++ )); do
-  echo -ne "${color}${text:$i:1}${reset}"  # Печатаем символ с цветом
+  echo -ne "${color}${text:$i:1}${reset}"
   sleep 0.041  # Pause
 done
 echo  # New line
@@ -191,7 +191,7 @@ cd bin
 
 echo -e 'Download and Install Story Binary' && sleep 1
 cd $HOME
-wget https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
+wget https://github.com/piplabs/story/releases/download/v0.12.1/story-linux-amd64
 sudo chmod +x $HOME/story-linux-amd64
 sudo mv $HOME/story-linux-amd64 $HOME/go/bin/story
 source $HOME/.bash_profile
