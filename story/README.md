@@ -1,7 +1,11 @@
 ![alt text](https://github.com/metilnodes/metilnodes/blob/main/logo/storyservices.png)
 
 
-# Story
+# Story 
+> [!WARNING]
+> Important updates: ****story binary v0.13.0** at block **height 858,000**, expected on November 26, 2024 | **story-geth binary v0.10.1**
+> 
+> [Install last updates](https://github.com/metilnodes/services/blob/main/story/update.md)
 
 ##  One-liner for automate Installation
 
