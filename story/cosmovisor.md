@@ -67,7 +67,7 @@ cat $HOME/.story/story/cosmovisor/upgrades/v0.13.0/upgrade-info.json
 ```
 sudo tee /etc/systemd/system/story.service > /dev/null <<EOF
 [Unit]
-Description=Story Consensus Client
+Description=Story Service
 After=network.target
 
 [Service]
