@@ -12,7 +12,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.bash_profile && \
 source ~/.bash_profile && \
 go version
 ```
-### Install Cosmovisor and init Cosmovisor
+### Install Cosmovisor and init
 
 ```
 source $HOME/.bash_profile
