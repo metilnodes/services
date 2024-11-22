@@ -79,7 +79,8 @@ if [ "$current_version" != "$latest_version" ]; then
         # update
         sudo systemctl stop story-geth
         cd $HOME/go/bin/
-        wget https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
+        rm geth-linux-amd64
+        wget https://github.com/piplabs/story-geth/releases/download/v0.10.1/geth-linux-amd64
         sudo chmod +x $HOME/geth-linux-amd64
         sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
         source $HOME/.bash_profile
