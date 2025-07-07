@@ -40,26 +40,26 @@ source $HOME/.bash_profile
 
 ```
 mkdir -p $HOME/.story/story/cosmovisor/genesis/bin
-mkdir -p $HOME/.story/story/cosmovisor/upgrades/v0.13.0/bin
+mkdir -p $HOME/.story/story/cosmovisor/upgrades/v1.3.0/bin
 cd $HOME
 rm story-linux-amd64
-wget https://github.com/piplabs/story/releases/download/v0.13.0/story-linux-amd64
+wget https://github.com/piplabs/story/releases/tag/v1.3.0/story-linux-amd64
 chmod +x story-linux-amd64
-sudo cp $HOME/story-linux-amd64 $HOME/.story/story/cosmovisor/upgrades/v0.13.0/bin/story
+sudo cp $HOME/story-linux-amd64 $HOME/.story/story/cosmovisor/upgrades/v1.3.0/bin/story
 ```
 
 ### Add Upgrade Information for new version
 
 ```
-echo '{"name":"v0.13.0","time":"0001-01-01T00:00:00Z","height":858000}' > $HOME/.story/story/cosmovisor/upgrades/v0.13.0/upgrade-info.json
+echo '{"name":"v1.3.0","time":"0001-01-01T00:00:00Z","height":6008000}' > $HOME/.story/story/cosmovisor/upgrades/v0.13.0/upgrade-info.json
 ```
 
 ### Verify the Setup
 
 ```
 ls -l /root/.story/story/cosmovisor/current
-$HOME/.story/story/cosmovisor/upgrades/v0.13.0/bin/story version
-cat $HOME/.story/story/cosmovisor/upgrades/v0.13.0/upgrade-info.json
+$HOME/.story/story/cosmovisor/upgrades/v1.3.0/bin/story version
+cat $HOME/.story/story/cosmovisor/upgrades/v1.3.0/upgrade-info.json
 ```
 
 ### Update service file:
