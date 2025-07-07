@@ -3,7 +3,7 @@
 
 # Story 
 > [!WARNING]
-> Important upgrades: ****story binary v0.13.0** at block **height 858,000**, expected on November 26, 2024 | **story-geth binary v0.10.1**
+> Important upgrades: ****story binary v1.3.0** at block **height 6.008.000**, expected on June 25, 2025 | **story-geth binary v1.1.0**
 > 
 > [Install last upgrade](https://github.com/metilnodes/services/blob/main/story/update.md)
 
