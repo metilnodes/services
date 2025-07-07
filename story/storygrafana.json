@@ -188,7 +188,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "rate(cometbft_consensus_validator_missed_blocks{chain_id=\"odyssey-0\"}[5m])",
+          "expr": "rate(cometbft_consensus_validator_missed_blocks{chain_id=\"aenid-0\"}[5m])",
           "legendFormat": "5 min",
           "range": true,
           "refId": "A"
@@ -199,7 +199,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "rate(cometbft_consensus_validator_missed_blocks{chain_id=\"odyssey-0\"}[6h])",
+          "expr": "rate(cometbft_consensus_validator_missed_blocks{chain_id=\"aenid-0\"}[6h])",
           "hide": false,
           "legendFormat": "6 hrs",
           "range": true,
@@ -269,7 +269,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_validator_missed_blocks{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_validator_missed_blocks{chain_id=\"aenid-0\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -364,7 +364,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_validator_power{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_validator_power{chain_id=\"aenid-0\"}",
           "legendFormat": "{{validator_address}}",
           "range": true,
           "refId": "A"
@@ -434,7 +434,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_validator_power{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_validator_power{chain_id=\"aenid-0\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1704,7 +1704,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_height{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_height{chain_id=\"aenid-0\"}",
           "legendFormat": "{{chain_id}}",
           "range": true,
           "refId": "A"
@@ -1803,7 +1803,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_height{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_height{chain_id=\"aenid-0\"}",
           "legendFormat": "{{chain_id}}",
           "range": true,
           "refId": "A"
@@ -1877,7 +1877,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_validators{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_validators{chain_id=\"aenid-0\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -1976,7 +1976,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_p2p_peers{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_p2p_peers{chain_id=\"aenid-0\"}",
           "legendFormat": "Peers Tendency",
           "range": true,
           "refId": "A"
@@ -2049,7 +2049,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_p2p_peers{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_p2p_peers{chain_id=\"aenid-0\"}",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -2148,7 +2148,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_validators_power{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_validators_power{chain_id=\"aenid-0\"}",
           "legendFormat": "Voting Power Total",
           "range": true,
           "refId": "A"
@@ -2219,7 +2219,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_total_txs{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_total_txs{chain_id=\"aenid-0\"}",
           "legendFormat": "{{chain_id}}",
           "range": true,
           "refId": "A"
@@ -2318,7 +2318,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_num_txs{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_consensus_num_txs{chain_id=\"aenid-0\"}",
           "legendFormat": "Transactions",
           "range": true,
           "refId": "A"
@@ -2389,7 +2389,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_mempool_recheck_times{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_mempool_recheck_times{chain_id=\"aenid-0\"}",
           "legendFormat": "{{chain_id}}",
           "range": true,
           "refId": "A"
@@ -2457,7 +2457,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_mempool_size{chain_id=\"odyssey-0\"}",
+          "expr": "cometbft_mempool_size{chain_id=\"aenid-0\"}",
           "legendFormat": "Uncommitted transactions",
           "range": true,
           "refId": "A"
@@ -2553,7 +2553,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "cometbft_consensus_block_size_bytes{chain_id=\"odyssey-0\"} ",
+          "expr": "cometbft_consensus_block_size_bytes{chain_id=\"aenid-0\"} ",
           "legendFormat": "Block Size (Bytes)",
           "range": true,
           "refId": "A"
@@ -2653,7 +2653,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "sum(rate(cometbft_p2p_peer_send_bytes_total{chain_id=\"odyssey-0\"}[5m])) / 1000",
+          "expr": "sum(rate(cometbft_p2p_peer_send_bytes_total{chain_id=\"aenid-0\"}[5m])) / 1000",
           "legendFormat": "Outbound traffic",
           "range": true,
           "refId": "A"
@@ -2753,7 +2753,7 @@
             "uid": "${DS}"
           },
           "editorMode": "code",
-          "expr": "sum(rate(cometbft_p2p_peer_receive_bytes_total{chain_id=\"odyssey-0\"}[5m])) / 1000",
+          "expr": "sum(rate(cometbft_p2p_peer_receive_bytes_total{chain_id=\"aenid-0\"}[5m])) / 1000",
           "legendFormat": "Inbound  traffic",
           "range": true,
           "refId": "A"
