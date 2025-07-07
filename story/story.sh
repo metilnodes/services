@@ -80,9 +80,10 @@ if [ "$current_version" != "$latest_version" ]; then
         sudo systemctl stop story-geth
         cd $HOME/go/bin/
         rm geth-linux-amd64
-        wget https://github.com/piplabs/story-geth/releases/download/v0.10.1/geth-linux-amd64
+        git clone https://github.com/piplabs/story-geth.git
+        cd story-geth
+        git checkout v1.1.0
         sudo chmod +x $HOME/geth-linux-amd64
-        sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
         source $HOME/.bash_profile
         sudo systemctl start story-geth
         echo "Updated!"
@@ -149,7 +150,7 @@ if [ -d "$DAEMON_HOME" ]; then
     new_folder_name="${DAEMON_HOME}_$(date +"%Y%m%d_%H%M%S")"
     mv "$DAEMON_HOME" "$new_folder_name"
 fi
-#CHAIN_ID="odyssey"
+#CHAIN_ID="aenid"
 #echo 'export CHAIN_ID='\"${CHAIN_ID}\" >> $HOME/.bash_profile
 
 if [ ! $VALIDATOR ]; then
@@ -190,7 +191,7 @@ cd bin
 
 echo -e 'Download and Install Story Binary' && sleep 1
 cd $HOME
-wget https://github.com/piplabs/story/releases/download/v0.12.1/story-linux-amd64
+wget https://github.com/piplabs/story/releases/download/v1.3.0/story-linux-amd64
 sudo chmod +x $HOME/story-linux-amd64
 sudo mv $HOME/story-linux-amd64 $HOME/go/bin/story
 source $HOME/.bash_profile
@@ -198,14 +199,14 @@ story version
 
 echo -e 'Download and Install Story-Geth Binary' && sleep 1
 cd $HOME
-wget https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
+wget https://github.com/piplabs/story-geth/releases/download/v1.1.0/geth-linux-amd64 
 sudo chmod +x $HOME/geth-linux-amd64
 sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
 source $HOME/.bash_profile
 story-geth version
 
-echo -e 'Init odyssey node' && sleep 1
-story init --network odyssey --moniker "${VALIDATOR}"
+echo -e 'Init aenid node' && sleep 1
+story init --network aenid --moniker "${VALIDATOR}"
 sleep 1
 
 echo -e 'Create story-geth service file' && sleep 1
@@ -217,7 +218,7 @@ After=network.target
 
 [Service]
 User=$USER
-ExecStart=$(which story-geth) --odyssey --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
+ExecStart=$(which story-geth) --aenid --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -287,7 +288,7 @@ sleep 1
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup
 sleep 1
 rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+rm -rf $HOME/.story/geth/aenid/geth/chaindata
 sleep 1
 wget -O story_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/story_snapshot.lz4
 
@@ -299,7 +300,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 
 sleep 2
 
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/aenid/geth
 sleep 1
 source $HOME/.bash_profile
 sleep 1
@@ -327,7 +328,7 @@ sudo systemctl stop story-geth
 sleep 1
 sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup
 sleep 1
-sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+sudo rm -rf $HOME/.story/geth/aenid/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 sleep 1
 wget -O story_snapshot.lz4 https://storysnapshot.metilnodes.tech/downloads/story_snapshot.lz4
@@ -340,7 +341,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 
 sleep 2
 
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/aenid/geth
 sleep 1
 source $HOME/.bash_profile
 sleep 1
