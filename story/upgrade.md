@@ -1,5 +1,5 @@
 > [!WARNING]
-> **Upgrade height Story-Geth: 1,243,000 . Please don`t upgrade story binary before the specified height**
+> **Upgrade height Story: 6.008.000 . Please don`t upgrade story binary before the specified height**
 >
 
 ##  One-liner for automate upgrade
@@ -11,34 +11,20 @@ wget -q -O story.sh https://raw.githubusercontent.com/metilnodes/services/refs/h
 
 ## Manual update
 
-### Upgrade story-geth binary v0.11.0
+### Upgrade story-geth binary v1.3.0
+
 ```
 cd $HOME
+rm -rf story
+git clone https://github.com/piplabs/story
+cd story
+git checkout v1.3.0
+go build -o story ./client 
 sudo systemctl stop story-geth
-rm geth-linux-amd64
-wget https://github.com/piplabs/story-geth/releases/download/v0.11.0/geth-linux-amd64
-chmod +x geth-linux-amd64
-mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
-source $HOME/.bash_profile
-story-geth version
-```
-### Restart service
-```
-sudo systemctl restart story-geth
-sudo journalctl -u story-geth -f -o cat
-```
-
-### Upgrade story-geth binary v0.13.0
-
-```
-cd $HOME
-sudo systemctl stop story
-rm story-linux-amd64
-wget https://github.com/piplabs/story/releases/download/v0.13.0/story-linux-amd64
-chmod +x story-linux-amd64
-cp $HOME/story-linux-amd64 $HOME/go/bin/story
-source $HOME/.bash_profile
-story version
+wget -O $(which geth) https://github.com/piplabs/story-geth/releases/download/v1.1.0/geth-linux-amd64
+chmod +x $(which geth)
+sudo systemctl start story-geth
+sudo mv $HOME/story/story $(which story)
 ```
 ### Restart service
 ```
@@ -75,7 +61,7 @@ echo "export DAEMON_DATA_BACKUP_DIR=$DAEMON_HOME/cosmovisor/backup" >> $HOME/.ba
 echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=false" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 mkdir -p $HOME/.story/story/cosmovisor/genesis/bin
-mkdir -p $HOME/.story/story/cosmovisor/upgrades/v0.13.0/bin
+mkdir -p $HOME/.story/story/cosmovisor/upgrades/v1.3.0/bin
 ```
 
 ### Stop node
@@ -89,10 +75,10 @@ sudo systemctl stop story
 ```
 cd $HOME
 rm story-linux-amd64
-wget https://github.com/piplabs/story/releases/download/v0.13.0/story-linux-amd64
+wget https://github.com/piplabs/story/releases/download/v1.3.0/story-linux-amd64
 chmod +x story-linux-amd64
-sudo cp $HOME/story-linux-amd64 $HOME/.story/story/cosmovisor/upgrades/v0.13.0/bin/story
-echo '{"name":"v0.13.0","time":"0001-01-01T00:00:00Z","height":858000}' > $HOME/.story/story/cosmovisor/upgrades/v0.13.0/upgrade-info.json
+sudo cp $HOME/story-linux-amd64 $HOME/.story/story/cosmovisor/upgrades/v1.3.0/bin/story
+echo '{"name":"v1.3.0","time":"0001-01-01T00:00:00Z","height":6008000}' > $HOME/.story/story/cosmovisor/upgrades/v1.3.0/upgrade-info.json
 ```
 
 ### Verify the Setup
