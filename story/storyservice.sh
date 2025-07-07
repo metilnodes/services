@@ -151,7 +151,7 @@ if [ -d "$DAEMON_HOME" ]; then
     new_folder_name="${DAEMON_HOME}_$(date +"%Y%m%d_%H%M%S")"
     mv "$DAEMON_HOME" "$new_folder_name"
 fi
-#CHAIN_ID="odyssey"
+#CHAIN_ID="aenid"
 #echo 'export CHAIN_ID='\"${CHAIN_ID}\" >> $HOME/.bash_profile
 
 if [ ! $VALIDATOR ]; then
@@ -206,8 +206,8 @@ sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
 source $HOME/.bash_profile
 story-geth version
 
-echo -e 'Init odyssey node' && sleep 1
-story init --network odyssey --moniker "${VALIDATOR}"
+echo -e 'Init aenid node' && sleep 1
+story init --network aenid --moniker "${VALIDATOR}"
 sleep 1
 
 echo -e 'Create story-geth service file' && sleep 1
@@ -219,7 +219,7 @@ After=network.target
 
 [Service]
 User=$USER
-ExecStart=$(which story-geth) --odyssey --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
+ExecStart=$(which story-geth) --aenid --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -289,7 +289,7 @@ sleep 1
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup
 sleep 1
 rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+rm -rf $HOME/.story/geth/aenid/geth/chaindata
 sleep 1
 wget -O story_snapshot.lz4 http://storysnapshotarchive.metilnodes.tech/downloads/story_snapshot.lz4
 
@@ -301,7 +301,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 
 sleep 2
 
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/aenid/geth
 sleep 1
 source $HOME/.bash_profile
 sleep 1
@@ -329,7 +329,7 @@ sudo systemctl stop story-geth
 sleep 1
 sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup
 sleep 1
-sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+sudo rm -rf $HOME/.story/geth/aenid/geth/chaindata
 sudo rm -rf $HOME/.story/story/data
 sleep 1
 wget -O story_snapshot.lz4 https://storysnapshot.metilnodes.tech/downloads/story_snapshot.lz4
@@ -342,7 +342,7 @@ lz4 -c -d story_snapshot.lz4 | tar -xv -C $HOME/.story/story
 
 sleep 2
 
-lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/odyssey/geth
+lz4 -c -d geth_snapshot.lz4 | tar -xv -C $HOME/.story/geth/aenid/geth
 sleep 1
 source $HOME/.bash_profile
 sleep 1
