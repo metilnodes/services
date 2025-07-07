@@ -43,29 +43,35 @@ source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 go version
 ```
-### Download Story-Geth binary
+### Download Story-Geth binary v1.1.0
 ```
 cd $HOME
-wget https://github.com/piplabs/story-geth/releases/download/v0.10.0/geth-linux-amd64 
-sudo chmod +x $HOME/geth-linux-amd64
-sudo mv $HOME/geth-linux-amd64 $HOME/go/bin/story-geth
+rm -rf story-geth
+git clone https://github.com/piplabs/story-geth.git
+cd story-geth
+git checkout v1.1.0
+make geth
+sudo mv build/bin/geth  $HOME/go/bin/
 source $HOME/.bash_profile
 story-geth version
 ```
 
-### Download Story binary
+### Download Story binary v1.3.0
 ```
 cd $HOME
-wget https://github.com/piplabs/story/releases/download/v0.12.0/story-linux-amd64
-sudo chmod +x $HOME/story-linux-amd64
-sudo mv $HOME/story-linux-amd64 $HOME/go/bin/story
+git clone https://github.com/piplabs/story
+sudo chmod +x $HOME/story
+cd story
+git checkout v1.3.0
+go build -o story ./client 
+sudo mv $HOME/story/story $HOME/go/bin
 source $HOME/.bash_profile
 story version
 ```
 
-### Init Odyssey node
+### Init Aenid node
 ```
-story init --network odyssey --moniker "Your_moniker_name"
+story init --network aeneid --moniker "Your_moniker_name"
 
 ```
 
@@ -78,7 +84,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/root/go/bin/story-geth --odyssey --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
+ExecStart=/root/go/bin/story-geth --aenid --syncmode full --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8545 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8546
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -146,7 +152,7 @@ story validator export --export-evm-key
 Create validator
 
 ```
-story validator create --stake 1000000000000000000 --private-key "your_private_key"
+story validator create --stake 1024000000000000000000 --private-key "your_private_key" --moniker "your_moniker_name"
 
 ```
 ```diff
@@ -157,7 +163,20 @@ Validator Staking
 ```
 story validator stake \
    --validator-pubkey "VALIDATOR_PUB_KEY_IN_BASE64" \
-   --stake 1000000000000000000 \
+   --stake 1024000000000000000000 \
    --private-key xxxxxxxxxxxxxx
 ```
 
+### Delete node
+```
+sudo systemctl stop story-geth
+sudo systemctl stop story
+sudo systemctl disable story-geth
+sudo systemctl disable story
+sudo rm /etc/systemd/system/story-geth.service
+sudo rm /etc/systemd/system/story.service
+sudo systemctl daemon-reload
+sudo rm -rf $HOME/.story
+sudo rm $HOME/go/bin/story-geth
+sudo rm $HOME/go/bin/story
+```
